@@ -9,7 +9,6 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
-
     <bean class="com.springcore.lifecycle.Samosa" name="s1"
           init-method="init" destroy-method="destroy">
         <property name="price" value="10" />
@@ -18,5 +17,16 @@
     <bean class="com.springcore.lifecycle.Pepsi" name="p1">
         <property name="price" value="5"/>
     </bean>
+
+    <bean class="com.springcore.lifecycle.Example" name="e1">
+        <property name="subject" value="Maths" />
+    </bean>
+
+
+    <!--    for activating all beans-->
+        <context:annotation-config />
+<!--for activation @postconstruct and @predestroy-->
+    <!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />-->
+
 </beans>
 
