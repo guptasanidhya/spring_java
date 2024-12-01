@@ -15,5 +15,9 @@ public class Test {
         System.out.println(s1);
         //for destroying object
         context.registerShutdownHook();
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        Pepsi p1 = (Pepsi) context.getBean("p1");
+        System.out.println(p1);
+
     }
 }

@@ -27,9 +27,9 @@ public class Samosa {
     }
 
     public void init(){
-        System.out.println("Hii I am inside Init");
+        System.out.println("Hii I am inside Init xml");
     }
     public void destroy(){
-        System.out.println("Destroying Destroying Destroying");
+        System.out.println("Destroy method xml file");
     }
 }
