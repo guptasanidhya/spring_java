@@ -2,7 +2,7 @@ package com.springcore.stereotype;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
+import java.util.*;
 @Component
 public class Student {
 
@@ -10,6 +10,18 @@ public class Student {
     private String studentName;
     @Value("Indore")
     private String city;
+
+   @Value("#{temp}")
+    private List address;
+
+    public List getAddress() {
+        return address;
+    }
+
+    public void setAddress(List address) {
+        this.address = address;
+    }
+
     public String getStudentName() {
         return studentName;
     }
