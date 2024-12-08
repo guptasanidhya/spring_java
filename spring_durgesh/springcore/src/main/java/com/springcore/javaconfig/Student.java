@@ -7,11 +7,23 @@ import org.springframework.stereotype.Component;
 @Component("firststudent")
 public class Student {
 
-    @Autowired
+    public Student(Samosa samosa) {
+        this.samosa = samosa;
+    }
+
+    public Samosa getSamosa() {
+        return samosa;
+    }
+
+    public void setSamosa(Samosa samosa) {
+        this.samosa = samosa;
+    }
+
+    //    @Autowired
     private Samosa samosa;
 
     public void getStudy(){
         System.out.println("I am Studying Hard");
-        samosa.getSamosa();
+        samosa.display();
     }
 }
