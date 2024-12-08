@@ -25,6 +25,23 @@ public class Demo {
     @Value("#{new java.lang.String('Sanidhya')}")
     private String name;
 
+    @Override
+    public String toString() {
+        return "Demo{" +
+                "x=" + x +
+                ", y=" + y +
+                ", z=" + z +
+                ", e=" + e +
+                ", pi=" + pi +
+                ", name='" + name + '\'' +
+                ", isActive=" + isActive +
+                '}';
+    }
+
+    @Value("#{1>0}")
+    private boolean isActive;
+
+
     public String getName() {
         return name;
     }
@@ -49,17 +66,6 @@ public class Demo {
         this.y = y;
     }
 
-    @Override
-    public String toString() {
-        return "Demo{" +
-                "x=" + x +
-                ", y=" + y +
-                ", z=" + z +
-                ", e=" + e +
-                ", pi=" + pi +
-                ", name='" + name + '\'' +
-                '}';
-    }
 
     public double getZ() {
         return z;
