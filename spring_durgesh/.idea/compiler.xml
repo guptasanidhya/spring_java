@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springjdbc" />
         <module name="springcore" />
+        <module name="springorm" />
       </profile>
     </annotationProcessing>
   </component>
