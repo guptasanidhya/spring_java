@@ -27,7 +27,7 @@ public class StudentDao {
         Session session = sessionFactory.getCurrentSession();
         //save method depricated in 6.0
          session.persist(student);
-        System.out.println("A new row Added");
+        System.out.println("A new row Added Id:"+student.getStudentId());
     }
 
     @Transactional
