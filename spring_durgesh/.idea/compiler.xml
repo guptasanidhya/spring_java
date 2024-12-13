@@ -9,6 +9,7 @@
         <module name="springjdbc" />
         <module name="springcore" />
         <module name="springorm" />
+        <module name="springmvc" />
       </profile>
     </annotationProcessing>
   </component>
