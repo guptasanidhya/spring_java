@@ -7,10 +7,11 @@
     <title>success</title>
 </head>
 <body>
-    <h1>Hello, Welcome!</h1>
-    <h1>${name}</h1>
-    <h1>${username}</h1>
-    <h1>${password}</h1>
+    <h1>${heading}</h1>
+    <h4>${desc}</h4>
+    <h1>${user.email}</h1>
+    <h1>${user.userName}</h1>
+    <h1>${user.password}</h1>
 
 
 

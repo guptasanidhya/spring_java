@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +14,8 @@
   </head>
   <body>
    <div class="container mt-5">
-    <h1>Hello, world!</h1>
+    <h1>${heading}</h1>
+    <h4>${desc}</h4>
     <h1>Sign up!</h1>
 
     <form action="processForm" method="post">
