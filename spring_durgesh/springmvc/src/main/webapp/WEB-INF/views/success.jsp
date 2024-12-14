@@ -12,6 +12,7 @@
     <h1>${user.email}</h1>
     <h1>${user.userName}</h1>
     <h1>${user.password}</h1>
+    <h1 style="color:green">${msg}</h1>
 
 
 
