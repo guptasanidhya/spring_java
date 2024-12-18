@@ -15,6 +15,15 @@
   </head>
   <body>
     <h1>Hello, world!</h1>
+        <!-- Only display the welcome message if userName is not null -->
+        <c:if test="${not empty userName}">
+          <h1>Welcome, ${userName}!</h1>
+        </c:if>
+
+        <!-- Display a default message if userName is null -->
+        <c:if test="${empty userName}">
+          <h1>Welcome, Guest!</h1>
+        </c:if>
     <img alt="hotel" src="<c:url value="/resources/image/hotel.jpg" />">
     <div class="container">
     <div class="card mx-auto mt-5 bg-primary" style="width:50%;">

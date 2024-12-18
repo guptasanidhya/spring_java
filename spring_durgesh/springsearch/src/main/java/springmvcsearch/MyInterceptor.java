@@ -51,12 +51,25 @@ public class MyInterceptor implements HandlerInterceptor {
     // Just leave it empty or return a default value.
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, org.springframework.web.servlet.ModelAndView modelAndView) throws Exception {
-        // Do nothing
-    }
+        System.out.println("This is post handler");
 
+        // Get the map of URI template variables (this will include userId and userName)
+        Map<String, String> uriVariables = (Map<String, String>) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);
+
+        // Extract userName and userId separately from the map
+        String userName = uriVariables.get("userName");
+
+        // Log the userName for debugging
+        System.out.println("userName: " + userName);
+
+        // Add the userName to the ModelAndView so it can be accessed in the view
+        if (modelAndView != null) {
+            modelAndView.addObject("userName", userName);
+        }
+    }
     // You can leave this empty as well if you don't need it.
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        // Do nothing
+        System.out.println("this is after completion method");
     }
 }
