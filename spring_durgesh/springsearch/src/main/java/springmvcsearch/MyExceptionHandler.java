@@ -7,31 +7,47 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-
 @ControllerAdvice
 public class MyExceptionHandler {
 
-
-    @ResponseStatus(value= HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler(value= NullPointerException.class)
-    public String exceptionHandlerNullPointer(Model m){
-        m.addAttribute("msg", "Null pointer exception has occured");
+    // NullPointerException handler
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(value = NullPointerException.class)
+    public String exceptionHandlerNullPointer(NullPointerException e, Model m) {
+        // Add the error message
+        m.addAttribute("msg", "Null pointer exception has occurred");
+        // Add the stack trace of the exception
+        m.addAttribute("stackTrace", getStackTraceString(e));
         return "null_page";
     }
 
-
-    @ResponseStatus(value= HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler(value=NumberFormatException.class)
-    public String exceptionHandlerNumberFormat(Model m){
-        m.addAttribute("msg", "number format exception has occured");
+    // NumberFormatException handler
+    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(value = NumberFormatException.class)
+    public String exceptionHandlerNumberFormat(NumberFormatException e, Model m) {
+        // Add the error message
+        m.addAttribute("msg", "Number format exception has occurred");
+        // Add the stack trace of the exception
+        m.addAttribute("stackTrace", getStackTraceString(e));
         return "null_page";
     }
 
-
-
-    @ExceptionHandler(value= Exception.class)
-    public String exceptionHandlerGeneric(Model m ){
-        m.addAttribute("msg","Exception has occured");
+    // Generic Exception handler
+    @ExceptionHandler(value = Exception.class)
+    public String exceptionHandlerGeneric(Exception e, Model m) {
+        // Add the error message
+        m.addAttribute("msg", "An exception has occurred");
+        // Add the stack trace of the exception
+        m.addAttribute("stackTrace", getStackTraceString(e));
         return "null_page";
+    }
+
+    // Utility method to convert the stack trace to a string
+    private String getStackTraceString(Exception e) {
+        StringBuilder stackTrace = new StringBuilder();
+        for (StackTraceElement element : e.getStackTrace()) {
+            stackTrace.append(element.toString()).append("\n");
+        }
+        return stackTrace.toString();
     }
 }

@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>null_page</title>
+    <title>Error Page</title>
 </head>
 <body>
-    <h1>Hello, error_here!</h1>
-    <h1>${msg}</h1>
+    <h1>Error Occurred</h1>
+    <p>${msg}</p>
+
+    <h2>Stack Trace:</h2>
+    <pre>${stackTrace}</pre>
 </body>
 </html>
