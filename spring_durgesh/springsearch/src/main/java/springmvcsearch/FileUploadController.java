@@ -18,6 +18,10 @@ public class FileUploadController {
     @RequestMapping("/fileform")
     public String showUploadForm(){
         System.out.println("I am in file handler");
+
+        //setting exception
+        String str=null;
+        System.out.println(str.charAt(0));
         return "fileform";
     }
 
